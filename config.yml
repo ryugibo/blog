@@ -1,3 +1,122 @@
-baseURL: http://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: "https://ryugibo.github.io/blog"
+title: "생각 쓰레기통"
+paginate: 5
+theme: PaperMod
+
+defaultContentLanguage: "ko"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    title: "생각 쓰레기통"
+    description: "생각을 벼리는 쓰레기통"
+    # author: Me
+    # author: ["Me", "You"] # multiple authors
+    images: ["<link or path of image for opengraph, twitter-cards>"]
+
+    defaultTheme: auto # dark, light
+    disableThemeToggle: false
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    disableSpecial1stPost: false
+    comments: true
+    hidemeta: false
+    showtoc: false
+    tocopen: false
+
+    assets:
+        # disableHLJS: true # to disable highlight.js
+        # disableFingerprinting: true
+        # favicon: "<link / abs url>"
+        # favicon16x16: "<link / abs url>"
+        # favicon32x32: "<link / abs url>"
+        # apple_touch_icon: "<link / abs url>"
+        # safari_pinned_tab: "<link / abs url>"
+
+    label:
+        text: "생각 쓰레기통"
+        # icon: /apple-touch-icon.png
+        # iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: false # needs to be explicitly set
+        title: ExampleSite
+        subtitle: "This is subtitle"
+        imageUrl: "<img location>"
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: my image
+        buttons:
+            - name: Posts
+              url: posts
+            - name: Tags
+              url: tags
+
+    # home-info mode
+    homeInfoParams:
+        Title: "생각 쓰레기통 🗑️"
+        Content: 생각 좀 버리려고 만든 쓰레기통입니다.
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/ryugibo"
+        #- name: twitter
+        #  url: "https://twitter.com/"
+        #- name: stackoverflow
+        #  url: "https://stackoverflow.com"
+
+    analytics:
+        google:
+            SiteVerificationTag: "XYZabc"
+
+    cover:
+        hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    # for search
+    # https://fusejs.io/api/options.html
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "searchkey", "content"]
+menu:
+    main:
+        - identifier: 카테고리
+          name: 카테고리
+          url: categories
+          weight: 10
+        - identifier: 태그
+          name: 태그
+          url: tags
+          weight: 20
+        - name: 검색
+          url: search/
+          weight: 30
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  series: "series"
+  
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
