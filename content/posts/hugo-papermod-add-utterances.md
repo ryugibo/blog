@@ -1,8 +1,9 @@
 ---
-title: "Hugo PaperMod 테마에 Utterances로 댓글 붙이기"
+title: "hugo PaperMod 테마에 Utterances로 댓글 붙이기"
 date: 2021-02-25T22:24:29+09:00
 ShowToc: true
 TocOpen: false
+tags: ["hugo", "PaperMod", "HTML"]
 ---
 
 # 결론
