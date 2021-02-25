@@ -98,10 +98,6 @@ params:
         keys: ["title", "permalink", "summary", "searchkey", "content"]
 menu:
     main:
-        - identifier: 카테고리
-          name: 카테고리
-          url: categories
-          weight: 10
         - identifier: 태그
           name: 태그
           url: tags
@@ -111,9 +107,7 @@ menu:
           weight: 30
 
 taxonomies:
-  category: "categories"
   tag: "tags"
-  series: "series"
   
 outputs:
   home:
