@@ -5,7 +5,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-## 결론
+# 결론
 
 `layouts/partials/comments.html`을 아래 내용으로 추가.
 
@@ -37,7 +37,7 @@ TocOpen: false
 {{- end }}
 ```
 
-## 서론
+# 내용
 
 `PaperMod` 테마는 `layouts/partials/comments.html` 를 테마를 사용하는 hugo 프로젝트에서 오버로드해서 사용하기를 권장하고 있다.
 
@@ -48,8 +48,6 @@ TocOpen: false
 물론, `defaultTheme` 를 `auto`가 아닌 `light`나 `dark`로 명시적으로 지정하고, `disableThemeToggle`를 `true`로 지정하면 특정 테마로 고정시키면 문제가 없긴한데..
 
 기왕 있는 토글기능.. 써먹는게 좋지 않을까 하는 생각에...
-
-일단은 아래와 같이 작성해서 테마에 맞는 테마가 적용되도록 하긴함..
 
 ## 테마에 맞게 utterances 테마를 지정
 
@@ -68,7 +66,6 @@ TocOpen: false
     document.write(' crossorigin="anonymous" async><\/script>');
 </script>
 ```
-
 
 ## 테마를 변경했을 때 바로바로 utterances 테마도 같이 변경
 
@@ -96,6 +93,6 @@ https://github.com/utterance/utterances/issues/170
 {{- end }}
 ```
 
-## 남은 문제
+# 남은 문제
 
 어차피 `comments.html` 을 hugo 프로젝트 수준에서 오버로드 하고 있기 때문에 당장 필요한 부분은 아니라고 생각되지만 `utterances` 의 `repo` 설정은 `config.yml` 에서 조정 가능하도록 하는게 좋을 것 같다.
