@@ -52,7 +52,7 @@ public:
 
 `DataActor` 라는 `Actor`를 상속받은 블루프린트 생성하고 `DataComponent`를 추가해서 `Health` 값을 변경하고 저장한다.
 
-![](1.png)
+![대충 DataActor에 DataComponent가 붙어있고 Health가 990으로 설정된 그림](1.png)
 
 ## CusomVersion을 정의
 
@@ -166,7 +166,7 @@ void UDataComponent::Serialize(FArchive& Ar)
 
 `ArVersion`에는 `CustomVersion`을 추가하기 전의 데이터가 저장되어있으므로 `-1`이 들어있다.
 
-![](2.png)
+![대충 ArVersion에 -1, Health_DEPRECATED에 990이 들어있는 그림](2.png)
 
 `Health_DEPRECATED`에는 위에서 `Health`에 저장했던 `990` 이 들어있는 것을 알 수 있다.
 
@@ -174,11 +174,11 @@ void UDataComponent::Serialize(FArchive& Ar)
 
 에디터상에서도 컴포넌트의 HealthList로 기존 값이 옮겨진 것을 확인할 수 있다.
 
-![](3.png)
+![대충 에디터에서 HealthList 값이 990 하나가 들어있는 정수 배열로 세팅되어있는 그림](3.png)
 
 이 때, 에디터상에서는 변경점이 없는 걸로 나오지만 저장하고 나서 에셋을 리로드해보면 `ArVersion`이 0으로 갱신되서 `HealthList`에 데이터를 옮겨담는 로직이 동작하지 않고 `Health_DEPRECATED`에는 변경했던 값도 저장되어있는 걸 확인할 수 있다.
 
-![](4.png)
+![대충 ArVersion이 0이고, Health_DEPRECATED가 0이 된 그림](4.png)
 
 # 결론
 
