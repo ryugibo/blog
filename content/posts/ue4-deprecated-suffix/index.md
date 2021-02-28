@@ -1,5 +1,5 @@
 ---
-title: "Unreal Engine 4 DEPRECATED 이용하기"
+title: "언리얼 엔진 4 DEPRECATED 이용하기"
 date: 2021-02-26T21:51:17+09:00
 ShowToc: true
 TocOpen: false
@@ -8,7 +8,7 @@ tags: ["Unreal Engine 4", "C++"]
 
 # 서론
 
-Unreal Engine 4 에서 `UPROPERTY`로 지정한 변수가 에셋, 레벨 등에 저장 데이터를 가지고 다른 구조 변수로 데이터를 옮겨야 할 때, 데이터를 유지하면서 구조를 변경을 에셋을 저장할 때 버전을 붙여서 `DEPRECATED` 를 붙여서 데이터를 처리하고 이후부터 저장할 땐 데이터를 버릴 수 있다.
+`UPROPERTY`로 지정한 변수가 에셋, 레벨 등에 저장 데이터를 가지고 다른 구조 변수로 데이터를 옮겨야 할 때, 데이터를 유지하면서 구조를 변경을 에셋을 저장할 때 버전을 붙여서 `DEPRECATED` 를 붙여서 데이터를 처리하고 이후부터 저장할 땐 데이터를 버릴 수 있다.
 
 `DEPRECATED`를 붙이지 않고 `CustomVersion`만 적용하면 cm 단위로 저장했던 데이터를 m 단위를 변경한다거나 하는 용도로도 사용할 수 있을 것 같다.
 
