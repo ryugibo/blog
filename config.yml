@@ -98,8 +98,8 @@ params:
         keys: ["title", "permalink", "summary", "searchkey", "content"]
 menu:
     main:
-        - identifier: 글목록
-          name: 글목록
+        - identifier: 글 목록
+          name: 글 목록
           url: archives
           weight: 10
         - identifier: 태그
