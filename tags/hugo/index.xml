@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on 생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/tags/hugo/</link>
+    <description>Recent content in hugo on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Mar 2021 20:37:10 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo 프로젝트에서 git lfs를 비활성화 한 이유</title>
+      <link>https://ryugibo.github.io/blog/posts/hugo-github-page-not-use-lfs/</link>
+      <pubDate>Mon, 01 Mar 2021 20:37:10 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/hugo-github-page-not-use-lfs/</guid>
+      <description>변명 얼마전에 글을 쓰다가 이미지와 영상들을 넣을 일이 있어서 lfs를 활성화 해본 적이 있다.
+활성화 했다가 다시 비활성화 한 이유는 다음과 같다.
+이미지 영상 파일들을 버전 관리할 필요 없다. 기본적으로 작성한 글과 글에 첨부된 파일을 갱신하는 경우가 없다.
+게임 프로젝트의 외부 에셋같은 경우에는 한 에셋을 계속 개선하면서 히스토리 파악이 필요하지만 글에 포함되는 첨부파일의 경우 갱신하는 경우가 있을까..?
+있더라도 많지 않아서 해당 글에 대해서만 첨부파일 관련 히스토리를 날려주면 될것이라 판단됐다.
+macOS 기본 git에 lfs가 빠져있다.</description>
+    </item>
+    
+    <item>
+      <title>hugo PaperMod 테마에 Utterances로 댓글 붙이기</title>
+      <link>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</link>
+      <pubDate>Thu, 25 Feb 2021 22:24:29 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</guid>
+      <description>결론 layouts/partials/comments.html을 아래 내용으로 추가.
+utterances script의 repo 부분은 저장소에 맞게 수정 필요.
+&amp;lt;script&amp;gt; document.write(&amp;#39;&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34; repo=&amp;#34;ryugibo/blog&amp;#34; issue-term=&amp;#34;pathname&amp;#34; label=&amp;#34;💬&amp;#34; &amp;#39;); if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { document.write(&amp;#39;theme=&amp;#34;github-dark-orange&amp;#34;&amp;#39;); } else { document.write(&amp;#39;theme=&amp;#34;github-light&amp;#34;&amp;#39;); } document.write(&amp;#39; crossorigin=&amp;#34;anonymous&amp;#34; async&amp;gt;&amp;lt;\/script&amp;gt;&amp;#39;); &amp;lt;/script&amp;gt; {{- if (not .Site.Params.disableThemeToggle) }} &amp;lt;script&amp;gt; document.getElementById(&amp;#34;theme-toggle&amp;#34;).addEventListener(&amp;#34;click&amp;#34;, () =&amp;gt; { if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-light&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } else { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-dark-orange&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } }) &amp;lt;/script&amp;gt; {{- end }} 내용 PaperMod 테마는 layouts/partials/comments.</description>
+    </item>
+    
+  </channel>
+</rss>

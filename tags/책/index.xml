@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>책 on 생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/tags/%EC%B1%85/</link>
+    <description>Recent content in 책 on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Mar 2021 22:57:27 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/tags/%EC%B1%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>조립x분해 게임 디자인</title>
+      <link>https://ryugibo.github.io/blog/posts/isbn-9788997716999/</link>
+      <pubDate>Tue, 02 Mar 2021 22:57:27 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/isbn-9788997716999/</guid>
+      <description>관심이 생기고 나서 책을 찾을 때는 이미 절판된 상태였는데 도서관에 있는걸 보고 바로 빌렸다.
+책 읽기 전에는 재밌는 얘기나 몇개 읽으려는 생각으로 읽기 시작했는데, 생각보다 내용이 좋아서 놀랬다.
+일단 전부 저자가 실제 개발하면서 프로토타입, 혹은 런칭까지 진행한 사례를 위주로 다룬다는점.
+그리고 실제 아이디어를 어떤식으로 발전시켰는지를 담고 있다는 점
+어떤식으로 발전했는지 내용을 모르고 게임만 플레이했다면 난 연관성도 찾기 어렵지 않았을까&amp;hellip;
+모든 예제를 해볼 수 없는 점은 아쉬웠지만 아이디어에 참고한 게임마다 전부 짧게 설명이 되어있으며 이해하는데 도움이 됐다.</description>
+    </item>
+    
+  </channel>
+</rss>

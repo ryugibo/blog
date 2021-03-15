@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PaperMod on 생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/tags/papermod/</link>
+    <description>Recent content in PaperMod on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 25 Feb 2021 22:24:29 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo PaperMod 테마에 Utterances로 댓글 붙이기</title>
+      <link>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</link>
+      <pubDate>Thu, 25 Feb 2021 22:24:29 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</guid>
+      <description>결론 layouts/partials/comments.html을 아래 내용으로 추가.
+utterances script의 repo 부분은 저장소에 맞게 수정 필요.
+&amp;lt;script&amp;gt; document.write(&amp;#39;&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34; repo=&amp;#34;ryugibo/blog&amp;#34; issue-term=&amp;#34;pathname&amp;#34; label=&amp;#34;💬&amp;#34; &amp;#39;); if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { document.write(&amp;#39;theme=&amp;#34;github-dark-orange&amp;#34;&amp;#39;); } else { document.write(&amp;#39;theme=&amp;#34;github-light&amp;#34;&amp;#39;); } document.write(&amp;#39; crossorigin=&amp;#34;anonymous&amp;#34; async&amp;gt;&amp;lt;\/script&amp;gt;&amp;#39;); &amp;lt;/script&amp;gt; {{- if (not .Site.Params.disableThemeToggle) }} &amp;lt;script&amp;gt; document.getElementById(&amp;#34;theme-toggle&amp;#34;).addEventListener(&amp;#34;click&amp;#34;, () =&amp;gt; { if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-light&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } else { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-dark-orange&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } }) &amp;lt;/script&amp;gt; {{- end }} 내용 PaperMod 테마는 layouts/partials/comments.</description>
+    </item>
+    
+  </channel>
+</rss>

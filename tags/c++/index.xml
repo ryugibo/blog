@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on 생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 Mar 2021 19:38:01 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>언리얼 엔진 4 BindWidget 사용법 2</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidget-readonly/</link>
+      <pubDate>Wed, 03 Mar 2021 19:38:01 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidget-readonly/</guid>
+      <description>언리얼 엔진 4 BindWidget 사용법 에 이어서..
+2를 붙일 정도로 많은 내용은 아닌데 예전에 정리했던 내용을 다시보니 빼먹은게 있어서 추가
+결론부터 말하면 BindWidget 사용시엔 BlueprintReadOnly도 적어주는게 좋아보인다.
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundWidget.generated.h&amp;#34; UCLASS(Abstract) class BOUND_API UBoundWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UserWidget Interfaces 	virtual void NativeConstruct() override; //~ End UserWidget Interfaces  public: UPROPERTY(BlueprintReadOnly, meta=(BindWidget)) class UTextBlock* DescText; UPROPERTY(meta=(BindWidget, OptionalWidget=true)) class UTextBlock* DescOptionText; UPROPERTY(meta=(BindWidgetOptional)) class UTextBlock* HelloText; }; C++ 상에서의 private이냐 public이냐는 것과는 별개로, 위젯 블루프린트 에디터상에서 배치한 위젯을 블루프린트에서 접근하지 못하는 미묘한 상황이 발생하기 때문이다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 범위 검사 IsWithin</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-fmath-within/</link>
+      <pubDate>Tue, 02 Mar 2021 23:32:02 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-fmath-within/</guid>
+      <description>간단한 TIL 정도 내용
+언리얼 엔진에서 제공하는 함수중에 특정 값이 범위안에 포함되는지 검사하는 함수가 있어서 기록
+template&amp;lt; class U &amp;gt; static FORCEINLINE bool IsWithin(const U&amp;amp; TestValue, const U&amp;amp; MinValue, const U&amp;amp; MaxValue) { return ((TestValue &amp;gt;= MinValue) &amp;amp;&amp;amp; (TestValue &amp;lt; MaxValue)); } 정의는 위와 같고 보통 쓰게된다면 아래와 같이 쓰지 않을까..
+void Function(int32 InNumber) { if (!FMath::IsWithin(InNumber, Min, Max)) { return; } // Do Something } 비슷하지만 최대값을 포함하는지도 검사하는 IsWithinInclusive도 있다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 BindWidgetAnim 사용법</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidgetanim/</link>
+      <pubDate>Sun, 28 Feb 2021 23:05:16 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidgetanim/</guid>
+      <description>서론 BindWidget과 마찬가지로 meta=(BindWidgetAnim)을 붙이되 UPROPERTY에 Transient가 있어야함.
+https://github.com/EpicGames/UnrealEngine/commit/2d8e4cc332cf60cc8c8b2de3d9c3de7e7adbbdc4
+전에는 안그랬던 모양인데 4.26.1 부터 블루프린트 컴파일 단계에서 Transient인지 검사하는 로직이 들어간 듯함. Transient가 아니면 블루프린트 컴파일 에러가 발생하므로 추가해주자
+적용 코드 작성 BoundAnimWidget.h
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundAnimWidget.generated.h&amp;#34; UCLASS(Abstract) class DEPRECATED_API UBoundAnimWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UUserWidget Interface 	virtual void NativeConstruct() override; //~ End UUserWidget Interface  private: UFUNCTION() void OnClickPlayScale(); UFUNCTION() void OnClickPlayMove(); public: UPROPERTY(meta=(BindWidget)) class UButton* ButtonPlayScale; UPROPERTY(meta=(BindWidget)) class UButton* ButtonPlayMove; UPROPERTY(Transient, meta=(BindWidgetAnim)) class UWidgetAnimation* ScaleAnim; UPROPERTY(Transient, meta=(BindWidgetAnim)) class UWidgetAnimation* MoveAnim; }; BoundAnimWidget.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 BindWidget 사용법</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidget/</link>
+      <pubDate>Sat, 27 Feb 2021 22:42:48 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidget/</guid>
+      <description>서론 UserWidget을 상속받은 C++ 클래스에서 에디터에서 만들어진 UMG 위젯에 원하는 위젯이 배치되어있는지 검증할 수 있고, 코드에서 원하는 위젯을 조작하고자 할 때, 위젯 트리로 해당 위젯을 찾는 단계 없이 접근할 수 있어서 최적화 효과도 있는 매크로
+적용 어차피 위젯 부모를 변경하면 블루프린트 컴파일 에러가 발생하기 때문에 위젯 블루프린트와 코드는 순서가 다르거나 동시에 작업해도 상관 없다.
+코드 작성 BoundWidget.h
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundWidget.generated.h&amp;#34; UCLASS(Abstract) class BOUND_API UBoundWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UserWidget Interfaces 	virtual void NativeConstruct() override; //~ End UserWidget Interfaces  public: UPROPERTY(meta=(BindWidget)) class UTextBlock* DescText; UPROPERTY(meta=(BindWidget, OptionalWidget=true)) class UTextBlock* DescOptionText; UPROPERTY(meta=(BindWidgetOptional)) class UTextBlock* HelloText; }; BoundWidget.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 DEPRECATED 이용하기</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-deprecated-suffix/</link>
+      <pubDate>Fri, 26 Feb 2021 21:51:17 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-deprecated-suffix/</guid>
+      <description>서론 UPROPERTY로 지정한 변수가 에셋, 레벨 등에 저장 데이터를 가지고 다른 구조 변수로 데이터를 옮겨야 할 때, 데이터를 유지하면서 구조를 변경을 에셋을 저장할 때 버전을 붙여서 DEPRECATED 를 붙여서 데이터를 처리하고 이후부터 저장할 땐 데이터를 버릴 수 있다.
+DEPRECATED를 붙이지 않고 CustomVersion만 적용하면 cm 단위로 저장했던 데이터를 m 단위를 변경한다거나 하는 용도로도 사용할 수 있을 것 같다.
+이 글에서는 DEPRECATED 를 써먹을 방법만 적고있다.
+예제 구조 변경 전 데이터를 세팅 C++로 컴포넌트와 데이터를 저장할 변수를 작성 에디터를 켜서 빈 C++ 프로젝트를 생성하고 ActorComponent를 상속받은 DataComponent라는 컴포넌트를 작성하고 변경 전 데이터를 저장할 Health라는 변수를 EditAnywhere로 추가한다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/</link>
+    <description>Recent content on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 15 Mar 2021 21:30:23 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>언리얼 엔진 4 레벨에 Paper2D 에셋 배치시 색이 달라보이는 문제 1</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-paper2d-exposure/</link>
+      <pubDate>Mon, 15 Mar 2021 21:30:23 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-paper2d-exposure/</guid>
+      <description>결론 예전에 설정했었다가 최근에 다시 작업할 때 까먹어서 그대로 작업하다가 다시 발견해서 기록해둔다
+   적용 전 적용 후          전체 프로젝트에 적용 세팅 &amp;gt; 프로젝트 세팅 &amp;gt; 엔진 &amp;gt; 렌더링 &amp;gt; Default Settings &amp;gt; 자동 노출 바이어스 를 1.0에서 0.0으로 변경
+사실 이 세팅 부분에서 자동 노출 부분이 기본값으로 비활성되어있어서 동작 안해야하는거 아닌가? 싶은데 나중에 엔진 코드를 확인해봐야겠다..
+특정 포스트 프로세스에 적용 레벨에 배치된 포스트 프로세스 &amp;gt; 디테일 &amp;gt; Lens &amp;gt; Exposure &amp;gt; 노출 보정 을 활성화하고 1.</description>
+    </item>
+    
+    <item>
+      <title>1 Bit Godot 코스 리뷰</title>
+      <link>https://ryugibo.github.io/blog/posts/godot-1-bit-godot-review/</link>
+      <pubDate>Thu, 11 Mar 2021 18:04:00 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/godot-1-bit-godot-review/</guid>
+      <description>https://www.heartgamedev.com/1-bit-godot-course-youtube
+작년에 할인할 때 샀던 코스를 지금 마무리했다.
+내용이 많거나 어려운건 아닌데 미루다가 godot 3.2.4 가 나오기 전에는 해두는게 좋을 것같아서 얼른 마쳤다. 강의를 따라하다보면 3.2.2에서 3.2.3로 마이너 버전 업데이트가 맞나 싶을 정도로 차이점이 눈에 보여서 3.2.4 에서 그대로 따라할 수 있을지 모르겠다.
+강의 내용은 간단한 게임 4개를 만들어보는데 마지막 Metroidvania 프로젝트가 가장 분량이 많고 앞선 강의에서 다뤘던 내용이 포함되어있기도 해서 어느 정도 다른 엔진 경험이 있거나 하면 Metroidvania만 따라해보는것도 충분할 것 같다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 BindWidget 사용법 2</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidget-readonly/</link>
+      <pubDate>Wed, 03 Mar 2021 19:38:01 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidget-readonly/</guid>
+      <description>언리얼 엔진 4 BindWidget 사용법 에 이어서..
+2를 붙일 정도로 많은 내용은 아닌데 예전에 정리했던 내용을 다시보니 빼먹은게 있어서 추가
+결론부터 말하면 BindWidget 사용시엔 BlueprintReadOnly도 적어주는게 좋아보인다.
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundWidget.generated.h&amp;#34; UCLASS(Abstract) class BOUND_API UBoundWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UserWidget Interfaces 	virtual void NativeConstruct() override; //~ End UserWidget Interfaces  public: UPROPERTY(BlueprintReadOnly, meta=(BindWidget)) class UTextBlock* DescText; UPROPERTY(meta=(BindWidget, OptionalWidget=true)) class UTextBlock* DescOptionText; UPROPERTY(meta=(BindWidgetOptional)) class UTextBlock* HelloText; }; C++ 상에서의 private이냐 public이냐는 것과는 별개로, 위젯 블루프린트 에디터상에서 배치한 위젯을 블루프린트에서 접근하지 못하는 미묘한 상황이 발생하기 때문이다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 gif 가져오기 플러그인</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-uegiflib-gifsplitter/</link>
+      <pubDate>Wed, 03 Mar 2021 19:38:01 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-uegiflib-gifsplitter/</guid>
+      <description>왜 이런짓을 했는가 예전에 UEgiflib라는 이름으로 gif 파일을 언리얼 엔진 에디터에 가져오기 하면 텍스쳐 &amp;gt; 스프라이트 &amp;gt; 플립북까지 생성하는 플러그인을 만들었다.
+마켓플레이스에 gif 파일 자체를 하나의 텍스쳐로 사용하는 플러그인 Animated Texture with GIF Importer(https://www.unrealengine.com/marketplace/ko/product/animated-texture-with-gif-importer) 이 무료로 나와서 이제 약간 개발 의욕이 떨어지기도 했었고, 실제 프로젝트에 사용해보지 않다보니 방치되고 있었다.
+이번에 2D 프로젝트를 잠깐 해보다가 플러그인을 살려봤는데 실제 사용해보니 애매한 부분이 있어서 구조를 바꿔보고, 바꾸는 김에 라이브러리도 바꿔보고 하다가 그냥 새로 플러그인을 만들었다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 범위 검사 IsWithin</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-fmath-within/</link>
+      <pubDate>Tue, 02 Mar 2021 23:32:02 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-fmath-within/</guid>
+      <description>간단한 TIL 정도 내용
+언리얼 엔진에서 제공하는 함수중에 특정 값이 범위안에 포함되는지 검사하는 함수가 있어서 기록
+template&amp;lt; class U &amp;gt; static FORCEINLINE bool IsWithin(const U&amp;amp; TestValue, const U&amp;amp; MinValue, const U&amp;amp; MaxValue) { return ((TestValue &amp;gt;= MinValue) &amp;amp;&amp;amp; (TestValue &amp;lt; MaxValue)); } 정의는 위와 같고 보통 쓰게된다면 아래와 같이 쓰지 않을까..
+void Function(int32 InNumber) { if (!FMath::IsWithin(InNumber, Min, Max)) { return; } // Do Something } 비슷하지만 최대값을 포함하는지도 검사하는 IsWithinInclusive도 있다.</description>
+    </item>
+    
+    <item>
+      <title>조립x분해 게임 디자인</title>
+      <link>https://ryugibo.github.io/blog/posts/isbn-9788997716999/</link>
+      <pubDate>Tue, 02 Mar 2021 22:57:27 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/isbn-9788997716999/</guid>
+      <description>관심이 생기고 나서 책을 찾을 때는 이미 절판된 상태였는데 도서관에 있는걸 보고 바로 빌렸다.
+책 읽기 전에는 재밌는 얘기나 몇개 읽으려는 생각으로 읽기 시작했는데, 생각보다 내용이 좋아서 놀랬다.
+일단 전부 저자가 실제 개발하면서 프로토타입, 혹은 런칭까지 진행한 사례를 위주로 다룬다는점.
+그리고 실제 아이디어를 어떤식으로 발전시켰는지를 담고 있다는 점
+어떤식으로 발전했는지 내용을 모르고 게임만 플레이했다면 난 연관성도 찾기 어렵지 않았을까&amp;hellip;
+모든 예제를 해볼 수 없는 점은 아쉬웠지만 아이디어에 참고한 게임마다 전부 짧게 설명이 되어있으며 이해하는데 도움이 됐다.</description>
+    </item>
+    
+    <item>
+      <title>hugo 프로젝트에서 git lfs를 비활성화 한 이유</title>
+      <link>https://ryugibo.github.io/blog/posts/hugo-github-page-not-use-lfs/</link>
+      <pubDate>Mon, 01 Mar 2021 20:37:10 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/hugo-github-page-not-use-lfs/</guid>
+      <description>변명 얼마전에 글을 쓰다가 이미지와 영상들을 넣을 일이 있어서 lfs를 활성화 해본 적이 있다.
+활성화 했다가 다시 비활성화 한 이유는 다음과 같다.
+이미지 영상 파일들을 버전 관리할 필요 없다. 기본적으로 작성한 글과 글에 첨부된 파일을 갱신하는 경우가 없다.
+게임 프로젝트의 외부 에셋같은 경우에는 한 에셋을 계속 개선하면서 히스토리 파악이 필요하지만 글에 포함되는 첨부파일의 경우 갱신하는 경우가 있을까..?
+있더라도 많지 않아서 해당 글에 대해서만 첨부파일 관련 히스토리를 날려주면 될것이라 판단됐다.
+macOS 기본 git에 lfs가 빠져있다.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 에디터 켜질 때마다 Steam VR 실행되는 문제</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-disable-autorun-steamvr/</link>
+      <pubDate>Mon, 01 Mar 2021 20:37:10 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-disable-autorun-steamvr/</guid>
+      <description>문제..까지는 아닌데 기본적으로 Steam VR 플러그인이 활성화되도록 되어있어서 VR 관련 설정을 손대지 않아도 자동으로 VR 설정이 되어있는 느낌이다. 결론은 Steam VR 플러그인을 비활성화 해주면 된다.
+Oculus VR 은 자동으로 켜지진 않았는데 VR 프로젝트도 아니다 보니 Oculus VR 플러그인도 같이 비활성화해줬다.
+에디터를 키기 전에 *.uproject 파일에 아래와 같이 Plugins 항목에 넣어준다.
+{ // ... 프로젝트 설정들 &amp;#34;Plugins&amp;#34;: [ { &amp;#34;Name&amp;#34;: &amp;#34;OculusVR&amp;#34;, &amp;#34;Enabled&amp;#34;: false, &amp;#34;SupportedTargetPlatforms&amp;#34;: [ &amp;#34;Win32&amp;#34;, &amp;#34;Win64&amp;#34;, &amp;#34;Android&amp;#34; ] }, { &amp;#34;Name&amp;#34;: &amp;#34;SteamVR&amp;#34;, &amp;#34;Enabled&amp;#34;: false, &amp;#34;SupportedTargetPlatforms&amp;#34;: [ &amp;#34;Win32&amp;#34;, &amp;#34;Win64&amp;#34;, &amp;#34;Linux&amp;#34; ] } ] } 프로젝트가 다수인 경우 Steam VR 플러그인 폴더(Engine\Plugins\Runtime\Steam\SteamVR)에 있는 SteamVR.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 BindWidgetAnim 사용법</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidgetanim/</link>
+      <pubDate>Sun, 28 Feb 2021 23:05:16 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidgetanim/</guid>
+      <description>서론 BindWidget과 마찬가지로 meta=(BindWidgetAnim)을 붙이되 UPROPERTY에 Transient가 있어야함.
+https://github.com/EpicGames/UnrealEngine/commit/2d8e4cc332cf60cc8c8b2de3d9c3de7e7adbbdc4
+전에는 안그랬던 모양인데 4.26.1 부터 블루프린트 컴파일 단계에서 Transient인지 검사하는 로직이 들어간 듯함. Transient가 아니면 블루프린트 컴파일 에러가 발생하므로 추가해주자
+적용 코드 작성 BoundAnimWidget.h
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundAnimWidget.generated.h&amp;#34; UCLASS(Abstract) class DEPRECATED_API UBoundAnimWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UUserWidget Interface 	virtual void NativeConstruct() override; //~ End UUserWidget Interface  private: UFUNCTION() void OnClickPlayScale(); UFUNCTION() void OnClickPlayMove(); public: UPROPERTY(meta=(BindWidget)) class UButton* ButtonPlayScale; UPROPERTY(meta=(BindWidget)) class UButton* ButtonPlayMove; UPROPERTY(Transient, meta=(BindWidgetAnim)) class UWidgetAnimation* ScaleAnim; UPROPERTY(Transient, meta=(BindWidgetAnim)) class UWidgetAnimation* MoveAnim; }; BoundAnimWidget.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 BindWidget 사용법</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-bindwidget/</link>
+      <pubDate>Sat, 27 Feb 2021 22:42:48 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-bindwidget/</guid>
+      <description>서론 UserWidget을 상속받은 C++ 클래스에서 에디터에서 만들어진 UMG 위젯에 원하는 위젯이 배치되어있는지 검증할 수 있고, 코드에서 원하는 위젯을 조작하고자 할 때, 위젯 트리로 해당 위젯을 찾는 단계 없이 접근할 수 있어서 최적화 효과도 있는 매크로
+적용 어차피 위젯 부모를 변경하면 블루프린트 컴파일 에러가 발생하기 때문에 위젯 블루프린트와 코드는 순서가 다르거나 동시에 작업해도 상관 없다.
+코드 작성 BoundWidget.h
+#pragma once  #include &amp;#34;CoreMinimal.h&amp;#34;#include &amp;#34;Blueprint/UserWidget.h&amp;#34;#include &amp;#34;BoundWidget.generated.h&amp;#34; UCLASS(Abstract) class BOUND_API UBoundWidget : public UUserWidget { GENERATED_BODY() public: //~ Begin UserWidget Interfaces 	virtual void NativeConstruct() override; //~ End UserWidget Interfaces  public: UPROPERTY(meta=(BindWidget)) class UTextBlock* DescText; UPROPERTY(meta=(BindWidget, OptionalWidget=true)) class UTextBlock* DescOptionText; UPROPERTY(meta=(BindWidgetOptional)) class UTextBlock* HelloText; }; BoundWidget.</description>
+    </item>
+    
+    <item>
+      <title>언리얼 엔진 4 DEPRECATED 이용하기</title>
+      <link>https://ryugibo.github.io/blog/posts/ue4-deprecated-suffix/</link>
+      <pubDate>Fri, 26 Feb 2021 21:51:17 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/ue4-deprecated-suffix/</guid>
+      <description>서론 UPROPERTY로 지정한 변수가 에셋, 레벨 등에 저장 데이터를 가지고 다른 구조 변수로 데이터를 옮겨야 할 때, 데이터를 유지하면서 구조를 변경을 에셋을 저장할 때 버전을 붙여서 DEPRECATED 를 붙여서 데이터를 처리하고 이후부터 저장할 땐 데이터를 버릴 수 있다.
+DEPRECATED를 붙이지 않고 CustomVersion만 적용하면 cm 단위로 저장했던 데이터를 m 단위를 변경한다거나 하는 용도로도 사용할 수 있을 것 같다.
+이 글에서는 DEPRECATED 를 써먹을 방법만 적고있다.
+예제 구조 변경 전 데이터를 세팅 C++로 컴포넌트와 데이터를 저장할 변수를 작성 에디터를 켜서 빈 C++ 프로젝트를 생성하고 ActorComponent를 상속받은 DataComponent라는 컴포넌트를 작성하고 변경 전 데이터를 저장할 Health라는 변수를 EditAnywhere로 추가한다.</description>
+    </item>
+    
+    <item>
+      <title>hugo PaperMod 테마에 Utterances로 댓글 붙이기</title>
+      <link>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</link>
+      <pubDate>Thu, 25 Feb 2021 22:24:29 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/hugo-papermod-add-utterances/</guid>
+      <description>결론 layouts/partials/comments.html을 아래 내용으로 추가.
+utterances script의 repo 부분은 저장소에 맞게 수정 필요.
+&amp;lt;script&amp;gt; document.write(&amp;#39;&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34; repo=&amp;#34;ryugibo/blog&amp;#34; issue-term=&amp;#34;pathname&amp;#34; label=&amp;#34;💬&amp;#34; &amp;#39;); if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { document.write(&amp;#39;theme=&amp;#34;github-dark-orange&amp;#34;&amp;#39;); } else { document.write(&amp;#39;theme=&amp;#34;github-light&amp;#34;&amp;#39;); } document.write(&amp;#39; crossorigin=&amp;#34;anonymous&amp;#34; async&amp;gt;&amp;lt;\/script&amp;gt;&amp;#39;); &amp;lt;/script&amp;gt; {{- if (not .Site.Params.disableThemeToggle) }} &amp;lt;script&amp;gt; document.getElementById(&amp;#34;theme-toggle&amp;#34;).addEventListener(&amp;#34;click&amp;#34;, () =&amp;gt; { if (document.body.className.includes(&amp;#34;dark&amp;#34;)) { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-light&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } else { const utterances = document.querySelector(&amp;#39;iframe&amp;#39;).contentWindow; utterances.postMessage({type: &amp;#39;set-theme&amp;#39;, theme: &amp;#39;github-dark-orange&amp;#39;}, &amp;#39;https://utteranc.es&amp;#39;); } }) &amp;lt;/script&amp;gt; {{- end }} 내용 PaperMod 테마는 layouts/partials/comments.</description>
+    </item>
+    
+    <item>
+      <title>검색</title>
+      <link>https://ryugibo.github.io/blog/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>글 목록</title>
+      <link>https://ryugibo.github.io/blog/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/archives/</guid>
+      <description>archives</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Godot on 생각 쓰레기통</title>
+    <link>https://ryugibo.github.io/blog/tags/godot/</link>
+    <description>Recent content in Godot on 생각 쓰레기통</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Mar 2021 18:04:00 +0900</lastBuildDate><atom:link href="https://ryugibo.github.io/blog/tags/godot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Bit Godot 코스 리뷰</title>
+      <link>https://ryugibo.github.io/blog/posts/godot-1-bit-godot-review/</link>
+      <pubDate>Thu, 11 Mar 2021 18:04:00 +0900</pubDate>
+      
+      <guid>https://ryugibo.github.io/blog/posts/godot-1-bit-godot-review/</guid>
+      <description>https://www.heartgamedev.com/1-bit-godot-course-youtube
+작년에 할인할 때 샀던 코스를 지금 마무리했다.
+내용이 많거나 어려운건 아닌데 미루다가 godot 3.2.4 가 나오기 전에는 해두는게 좋을 것같아서 얼른 마쳤다. 강의를 따라하다보면 3.2.2에서 3.2.3로 마이너 버전 업데이트가 맞나 싶을 정도로 차이점이 눈에 보여서 3.2.4 에서 그대로 따라할 수 있을지 모르겠다.
+강의 내용은 간단한 게임 4개를 만들어보는데 마지막 Metroidvania 프로젝트가 가장 분량이 많고 앞선 강의에서 다뤘던 내용이 포함되어있기도 해서 어느 정도 다른 엔진 경험이 있거나 하면 Metroidvania만 따라해보는것도 충분할 것 같다.</description>
+    </item>
+    
+  </channel>
+</rss>
