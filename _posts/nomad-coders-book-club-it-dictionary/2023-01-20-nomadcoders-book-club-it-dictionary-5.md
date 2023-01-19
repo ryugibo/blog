@@ -1,6 +1,6 @@
 ---
 title: "[노개북 TIL] IT 5분 잡학사전 #5"
-date: 2023-01-20 02:00:00+0900
+date: 2023-01-20 02:05:00+0900
 categories: [노마드코더, 북클럽]
 tags: [nomadcoders, TIL, IT 5분 잡학사전]
 ---
