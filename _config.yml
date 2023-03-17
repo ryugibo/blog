@@ -23,7 +23,7 @@ title: ryugibo # the main title
 tagline: https://ryugibo.github.io/blog # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://ryugibo.github.io"
@@ -41,8 +41,8 @@ social:
   email: ryugibo@daum.net # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/ryugibo # change to your github homepage
     - https://twitter.com/ryugibo # change to your twitter homepage
+    - https://github.com/ryugibo # change to your github homepage
     - https://www.linkedin.com/in/ryugibo
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -82,7 +82,7 @@ img_cdn:
 # the avatar on sidebar, support local or CORS resources
 avatar:
 
-# boolean type, the global switch for ToC in posts.
+# boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
@@ -185,7 +185,7 @@ exclude:
   - README.md
   - CHANGELOG.md
   - LICENSE
-  - gulpfile.js
+  - rollup.config.js
   - node_modules
   - package*.json
 
